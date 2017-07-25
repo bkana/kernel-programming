@@ -6,6 +6,9 @@
 //step 2 create variable
 int param_var[3] = {0,0,0};
 
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("B. Nguimeya Kana");
+MODULE_DESCRIPTION("A Simple Hello World module");
 //step 3 register (macro)
 //module_param(name_var, type, permissions)
 
