@@ -14,7 +14,7 @@ static struct file_operations fops = {
 
 static int myregister_chrdev(dev_t device_number, int count, char *name,
 struct file_operations *fops){
-
+ printk("Kana");
 if(register_chrdev_region(device_number, count, name)){
  printk("Devicenumber 0x%x not available ...\n", device_number);
  return -1;
