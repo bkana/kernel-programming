@@ -1,9 +1,10 @@
-obj-m += IO-Management.o Hello.o
+obj-m += Hello.o
 
-KDIR = /usr/src/linux-headers-4.8.0-22-generic
-PWD := $(shell pwd)
-all:
-	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
+KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 
-clean:
-	rm -rf *.o *.ko *.mod.* *.symvers *.order
+all default: modules
+install:  modules_install
+
+modules modules_install help clean:
+	$(MAKE) -C $(KERNELDIR) M=$(shell pwd) $@
+
