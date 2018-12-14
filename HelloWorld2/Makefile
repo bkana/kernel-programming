@@ -1,4 +1,5 @@
-obj-m += helloword.o
+obj-m += helloword.o wait_queue.o
+##obj-m += wait_queue.0
 
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 
